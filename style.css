@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Poppins', sans-serif;
 }
@@ -53,17 +57,18 @@ a{
 }
 
 /* utility classes */
-header{
+#home{
     background-color:var(--bg-primary);
     height: 100vh;
 }
-header .navbar{
+#home .navbar{
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     position: fixed;
     width: 100%;
+    z-index: 1;/* krmel lnav bar tdalla fo2 kl shi bi aleb el page */
 }
-header .navbar nav{
+#home .navbar nav{
     display: flex;
     justify-content: space-between;
     max-width: 1100px;
@@ -77,17 +82,17 @@ header .navbar nav{
     font-size: 24px;
 }
 
-header .navbar nav ul{
+#home .navbar nav ul{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-header .navbar nav ul a{
+#home .navbar nav ul a{
     margin: 0px 15px;
     color:var(--primary-color);
     font-weight: 600;
 }
-header .header-content{
+#home .header-content{
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     max-width: 1100px;
@@ -132,7 +137,7 @@ header.header-content .content-text{
     transform:scale(0.5) ;
 }
 header .header-content img{
-    max-width: 450px;
+    width: 450px;
 }
 /* About start */
 #about, #skills {
@@ -215,6 +220,7 @@ header .header-content img{
 /* services start */
 #services, #contact{
     background-color: #d6f1e9;
+    padding: 2rem 0;
 }
 #services .container .heading img{  
     max-width: 40px;
@@ -286,3 +292,124 @@ header .header-content img{
     border:1px solid #bbb;
 }
 /* contact end */
+/* footer satart */
+#footer{
+    margin: auto;
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+/* footer end */
+/* ipad responsive */
+@media (max-width: 768px) {
+    #home .navbar nav{
+        display: block;
+        text-align:center;
+    }
+    #home .navbar nav ul{
+        margin-top: 20px;
+    }
+    #home .navbar nav ul a{
+        margin: 0 8px;
+    }
+    #home .header-content, #contact .row{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    header.header-content .content-text{
+        margin-bottom: 0rem;
+        margin-top: 5rem;
+    }
+
+    #home .header-content h1{
+        font-size: 40px;
+    }
+
+    header .header-content img {
+        width: 350px;
+        margin: auto;
+    }
+
+    #about h2, #skills h2, #services h2, #portfolio h2, #contact h2 {
+        font-size: 30px;
+    }
+    #about .about-content .col-1 h3{
+        font-size: 20px;
+    }
+    #about .about-content p{
+        font-size: 12px;
+    }
+
+    #about .about-content{
+        margin-top:2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1fr;
+    }
+    #skills .skills-content .row, #services .container .row {
+        grid-template-columns: repeat(2, 1fr);/*repeat ya3ne 3id 4 marrat bi 2imet 1fr distance*/
+    }    
+    #contact .container .row img{
+        max-width: 250px;
+        margin: auto;
+    }
+}
+/* respomsive iphone */
+@media (max-width: 412px) {
+    #home .navbar nav{
+        display: block;
+        text-align:center;
+    }
+    #home .navbar nav ul{
+        margin-top: 10px;
+    }
+    #home .navbar nav ul a{
+        margin: 0 5px;
+    }
+    #home .header-content, #contact .row{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    header.header-content .content-text{
+        margin-bottom: 0rem;
+        margin-top: 5rem;
+    }
+
+    #home .header-content h1{
+        font-size: 30px;
+    }
+
+    header .header-content img {
+        width: 200px;
+        margin: auto;
+    }
+
+    #about h2, #skills h2, #services h2, #portfolio h2, #contact h2 {
+        font-size: 30px;
+    }
+    #about .about-content .col-1 h3{
+        font-size: 15px;
+    }
+
+    #about .about-content{
+        margin-top:2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1fr;
+    }
+    #skills .skills-content .row, #services .container .row {
+        grid-template-columns: 1fr;/*repeat ya3ne 3id 4 marrat bi 2imet 1fr distance*/
+    }    
+    #contact .container .row img{
+        max-width: 100px;
+        margin: auto;
+    }
+    #contact .container .row {
+        padding: 2rem 1rem;
+    }
+    /* #contact .row input,#contact .row textarea{
+        display: grid;
+        grid-template-columns: 1fr;
+    }        */
+}
