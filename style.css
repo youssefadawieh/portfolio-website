@@ -356,7 +356,7 @@ header .header-content img{
     }
 }
 /* respomsive iphone */
-@media (max-width: 412px) {
+@media (max-width: 528px) {
     #home .navbar nav{
         display: block;
         text-align:center;
